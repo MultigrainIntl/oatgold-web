@@ -80,10 +80,10 @@ h3 { font-size: clamp(1.35rem, 2.2vw, 1.75rem); }
   border-bottom: 1px solid var(--line); transition: box-shadow .3s var(--ease);
 }
 .site-header.scrolled { box-shadow: var(--shadow-sm); }
-.nav { display: flex; align-items: center; justify-content: space-between; height: 88px; }
+.nav { display: flex; align-items: center; justify-content: space-between; height: 100px; }
 .brand { display: flex; align-items: center; }
 .brand:hover { opacity: .85; }
-.brand-logo { height: 64px; width: auto; display: block; }
+.brand-logo { height: 80px; width: auto; display: block; }
 .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
 .nav-links a { color: var(--ink-soft); font-weight: 600; font-size: 1rem; position: relative; }
 .nav-links a:hover { color: var(--ink); }
@@ -241,6 +241,34 @@ h3 { font-size: clamp(1.35rem, 2.2vw, 1.75rem); }
 .faq-a { max-height: 0; overflow: hidden; transition: max-height .35s var(--ease); }
 .faq-a-inner { padding: 0 0 1.4rem; color: var(--ink-soft); max-width: 72ch; }
 
+/* ---------- Bag product photos ---------- */
+.bag-photo {
+  background: var(--grain-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+}
+.bag-photo:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.bag-photo img {
+  width: 100%;
+  aspect-ratio: 5/6;
+  object-fit: contain;
+  background: var(--grain-soft);
+  padding: 2rem 1.5rem;
+  display: block;
+}
+.bag-photo-label {
+  padding: 1rem 1.4rem 1.1rem;
+  text-align: center;
+  font-weight: 700;
+  font-size: .95rem;
+  color: var(--ink);
+  border-top: 1px solid var(--line);
+  background: var(--white);
+}
+
 /* ---------- Achieving All Three pillars ---------- */
 .pillar-card {
   padding: 2.5rem 2rem 2rem;
@@ -263,7 +291,7 @@ h3 { font-size: clamp(1.35rem, 2.2vw, 1.75rem); }
 .site-footer { background: var(--field-deep); color: var(--grain); padding: clamp(3.5rem,7vw,5rem) 0 2rem; }
 .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 2rem; margin-bottom: 2.5rem; }
 .site-footer .brand { color: #fff; margin-bottom: 1.2rem; }
-.site-footer .brand-logo { height: 56px; }
+.site-footer .brand-logo { height: 72px; }
 .site-footer h4 { color: #fff; font-family: var(--font-body); font-size: .85rem; text-transform: uppercase; letter-spacing: .14em; margin-bottom: 1rem; }
 .site-footer ul { list-style: none; }
 .site-footer li { margin-bottom: .6rem; }
@@ -286,7 +314,7 @@ h3 { font-size: clamp(1.35rem, 2.2vw, 1.75rem); }
   .product-line-head { flex-direction: column; gap: 1rem; }
 }
 @media (max-width: 680px) {
-  .nav-links { position: fixed; inset: 88px 0 auto 0; background: var(--cream); flex-direction: column; gap: 0; padding: 1rem 0; border-bottom: 1px solid var(--line); box-shadow: var(--shadow-md); transform: translateY(-120%); transition: transform .35s var(--ease); }
+  .nav-links { position: fixed; inset: 100px 0 auto 0; background: var(--cream); flex-direction: column; gap: 0; padding: 1rem 0; border-bottom: 1px solid var(--line); box-shadow: var(--shadow-md); transform: translateY(-120%); transition: transform .35s var(--ease); }
   .nav-links.open { transform: translateY(0); }
   .nav-links li { width: 100%; text-align: center; padding: .4rem 0; }
   .nav-cta { margin: .6rem auto; }
