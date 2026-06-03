@@ -1,6 +1,6 @@
 # OatGold Website — STATE
 
-**Last updated: 2026-06-02**
+**Last updated: 2026-06-02** (updated same session)
 
 ## What this is
 
@@ -36,7 +36,7 @@ Rebuild of oatgold.com as a static site on GitHub Pages, migrated off GoDaddy. O
 - Purity Protocol oats: 100% guarantee of no glyphosate or chlormequat. No-chemical policy.
 - Packaging: bulk tote bags, 50 lb multi-wall paper bags, custom retail pillow pouches.
 - Shipping: worldwide via 20 & 40 ft ocean containers; domestic by truck.
-- Contact: hours Mon-Fri 7am-8pm; WhatsApp offered (real number not yet on site -> points to email); sales@oatgold.com fallback.
+- Contact: hours Mon-Fri 7am-8pm; WhatsApp button live on contact page (wa.me/19704814977); sales@oatgold.com fallback.
 - Pages: index, wholesale-oats, purity-protocol, faq, contact + sitemap.xml, robots.txt, CNAME, README.md, favicon.
 
 ## DONE
@@ -48,7 +48,7 @@ Build, premium design, accurate content, working lead form, domain connected, HT
 1. Confirm https://oatgold.com loads with the lock icon.
 2. Enable "Enforce HTTPS": github.com -> MultigrainIntl/oatgold-web -> Settings -> Pages -> tick Enforce HTTPS.
 3. **ONLY after the site is confirmed live:** cancel the GoDaddy "Websites + Marketing" plan for oatgold.com (renews Jun 22). Keep the domain registration. Never touch Google MX records.
-4. Optional polish: add real WhatsApp number; consider additional product/field photography.
+4. Optional polish: consider additional product/field photography.
 
 ## How to resume next session
 
