@@ -52,8 +52,10 @@
 <section class="section">
   <div class="container split" style="align-items:start;">
     <div class="form-card reveal">
-      <div class="form-success" role="status">Thanks — your request is ready to send. Your email app should open; if it doesn't, email us at sales@oatgold.com.</div>
-      <form data-quote-form novalidate>
+      <div class="form-success" role="status">Thanks — we've received your request and will follow up shortly at the email you provided.</div>
+      <form action="https://formspree.io/f/xpqeadrq" method="POST" data-quote-form novalidate>
+        <input type="hidden" name="site" value="oatgold">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="form-grid">
           <div class="field"><label for="name">Full name <span class="req">*</span></label><input id="name" name="name" type="text" required autocomplete="name"></div>
           <div class="field"><label for="company">Company <span class="req">*</span></label><input id="company" name="company" type="text" required autocomplete="organization"></div>

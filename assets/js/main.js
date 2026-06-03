@@ -52,23 +52,37 @@
     });
   });
 
-  /* Quote / contact form — client-side validation + mailto fallback.
-     NOTE: GitHub Pages is static and cannot process forms server-side.
-     This wires a graceful confirmation + opens the visitor's email client.
-     Replace ACTION below with a Formspree/Basin endpoint for inbox delivery. */
+  /* Quote / contact form — AJAX to Formspree, inline success banner */
   document.querySelectorAll("form[data-quote-form]").forEach(function (form) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       if (!form.checkValidity()) { form.reportValidity(); return; }
-      var data = new FormData(form);
-      var lines = [];
-      data.forEach(function (v, k) { if (v) lines.push(k + ": " + v); });
-      var subject = encodeURIComponent("Oat Gold quote request — " + (data.get("company") || "New inquiry"));
-      var body = encodeURIComponent(lines.join("\n"));
-      var success = form.querySelector(".form-success");
-      if (success) { success.classList.add("show"); success.scrollIntoView({ behavior: "smooth", block: "center" }); }
-      form.reset();
-      window.location.href = "mailto:sales@oatgold.com?subject=" + subject + "&body=" + body;
+      var btn = form.querySelector('[type="submit"]');
+      var card = form.closest(".form-card");
+      var success = card && card.querySelector(".form-success");
+      if (btn) { btn.disabled = true; btn.textContent = "Sending…"; }
+      fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" }
+      })
+      .then(function (res) {
+        if (res.ok) {
+          if (success) { success.classList.add("show"); success.scrollIntoView({ behavior: "smooth", block: "center" }); }
+          form.reset();
+          if (btn) { btn.disabled = false; btn.textContent = "Send quote request"; }
+        } else {
+          return res.json().then(function (data) {
+            var msg = (data.errors || []).map(function (err) { return err.message; }).join(", ") || "Something went wrong — please email sales@oatgold.com.";
+            alert(msg);
+            if (btn) { btn.disabled = false; btn.textContent = "Send quote request"; }
+          });
+        }
+      })
+      .catch(function () {
+        alert("Could not send your request. Please email us at sales@oatgold.com.");
+        if (btn) { btn.disabled = false; btn.textContent = "Send quote request"; }
+      });
     });
   });
 
